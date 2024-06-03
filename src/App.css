@@ -1,0 +1,91 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.app-header {
+  background-color: #0a1a2d;
+  color: #fff;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.app-main {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.app-left-column {
+  flex: 1;
+  flex-basis: 35%;
+  display: flex;
+  align-items: center;
+  align-self: flex-start;
+}
+
+.app-right-column {
+  flex: 1;
+  flex-basis: 65%;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-block {
+  padding: 20px;
+  margin: 20px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.blockSpinner {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.45);
+  position: absolute;
+  top: 0;
+
+  .spinners {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    top: 30%;
+    z-index: 100;
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #0d2b84;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+@media (max-width: 1024px) {
+  .app-main {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .app-left-column,
+  .app-right-column {
+    flex-basis: 100%;
+    align-self: unset;
+  }
+}
